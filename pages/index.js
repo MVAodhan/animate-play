@@ -14,6 +14,17 @@ export default function Home() {
       alignItems="center"
       h="100vh"
       bgColor="#fa4e2f"
+      initial={{ opacity: 0, x: "100vw" }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ x: "-100vw" }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 100,
+        opacity: {
+          duration: 0.2,
+        },
+      }}
     >
       <Head>
         <title>Create Next App</title>
@@ -22,7 +33,7 @@ export default function Home() {
       </Head>
       <MotionBox as="main" color="#2f62fa">
         <MotionBox as="h1">Home page</MotionBox>
-        <MotionLink href="/about">
+        <MotionLink href="about">
           <a> Go to About </a>
         </MotionLink>
       </MotionBox>

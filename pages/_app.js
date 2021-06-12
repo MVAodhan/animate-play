@@ -7,13 +7,8 @@ const MotionBox = motion(Box);
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <AnimatePresence exitBeforeEnter>
-      <MotionBox
-        key={router.route}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <MotionBox key={router.route}>
         <Component {...pageProps} />
       </MotionBox>
     </AnimatePresence>
